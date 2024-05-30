@@ -33,7 +33,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 20.0,
+            bottom: 30.0,
             right: 40.0,
             left: 40.0,
             child: ElevatedButton(

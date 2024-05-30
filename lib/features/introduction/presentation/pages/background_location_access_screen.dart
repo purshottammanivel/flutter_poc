@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:uno_point_flutter_poc/config/routes/routes.dart';
 import 'package:uno_point_flutter_poc/core/resources/strings.dart';
 
 class BackgroundLocationAccessScreen extends StatelessWidget {
@@ -43,10 +44,10 @@ class BackgroundLocationAccessScreen extends StatelessWidget {
             const SizedBox(height: 50),
             ElevatedButton(
               onPressed: () {
-                // Navigator.pushNamed(
-                //   context,
-                //   AppRoutes.privacyPolicyScreen,
-                // );
+                Navigator.pushNamed(
+                  context,
+                  AppRoutes.customerIdInputScreen,
+                );
               },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(
@@ -65,13 +66,6 @@ class BackgroundLocationAccessScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-
-  PreferredSizeWidget buildAppBar() {
-    return AppBar(
-      scrolledUnderElevation: 0,
-      title: const Text(Strings.appName),
     );
   }
 }

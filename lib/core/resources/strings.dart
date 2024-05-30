@@ -82,4 +82,8 @@ class Strings {
   static const String backgroundPermissionDescription =
       'Do you understand this app requires Background Location Access to verify your location. These locations polled are used to allocate tickets and approve claims of your travel. You can only use this application if you allow background location access. This access is only taken by the app from your Login till Logout from the app or if the app is opened exclusively by you for any purpose. If you understand this well then continue by clicking I agree.';
   static const String btnBackgroundPermissionIAgree = 'I Agree';
+  static const String appUrnNumberTitle = 'URN Number';
+  static const String appUrnNumber = '514604766392897';
+  static const String textFieldHintEnterCustomerID = 'Enter Customer ID';
+  static const String privacyPolicyPriorLogin = 'By using UnoPoint, you agree to UnoPoint Terms of Used and Privacy Policy';
 }
