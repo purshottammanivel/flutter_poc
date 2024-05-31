@@ -44,8 +44,8 @@ class PrivacyPolicyScreen extends StatelessWidget {
           ),
           Positioned(
             bottom: 30.0,
-            right: 40.0,
-            left: 40.0,
+            right: 60.0,
+            left: 60.0,
             child: ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(
