@@ -10,8 +10,18 @@ class BackgroundLocationAccessScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 219, 233, 242),
         scrolledUnderElevation: 0,
-        title: const Text(Strings.appName),
+        title: Text(
+          Strings.appName,
+          style: GoogleFonts.ptSans(
+            color: const Color.fromARGB(250, 0, 102, 140),
+            fontSize: 24,
+          ),
+        ),
+        iconTheme: const IconThemeData().copyWith(
+          color: const Color.fromARGB(250, 0, 102, 140),
+        ),
       ),
       body: Center(
         child: Column(
@@ -20,13 +30,13 @@ class BackgroundLocationAccessScreen extends StatelessWidget {
             Image.asset(
               'assets/images/ic_location.PNG',
               height: 100,
-              color: Colors.grey,
+              color: const Color.fromARGB(255, 0, 102, 140),
             ),
             const SizedBox(height: 50),
             Text(
               Strings.backgroundPermission,
               style: GoogleFonts.ptSans(
-                color: Colors.black,
+                color: const Color.fromARGB(255, 0, 102, 140),
                 fontSize: 26,
               ),
             ),
@@ -54,7 +64,8 @@ class BackgroundLocationAccessScreen extends StatelessWidget {
                   horizontal: 80.0,
                   vertical: 10.0,
                 ),
-                foregroundColor: Colors.black,
+                backgroundColor: const Color.fromARGB(250, 0, 102, 140),
+                foregroundColor: Colors.white,
               ),
               child: Text(
                 Strings.btnBackgroundPermissionIAgree,

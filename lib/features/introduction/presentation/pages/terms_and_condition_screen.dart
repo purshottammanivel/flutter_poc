@@ -10,8 +10,18 @@ class PrivacyPolicyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 219, 233, 242),
         scrolledUnderElevation: 0,
-        title: const Text(Strings.appName),
+        title: Text(
+          Strings.appName,
+          style: GoogleFonts.ptSans(
+            color: const Color.fromARGB(250, 0, 102, 140),
+            fontSize: 24,
+          ),
+        ),
+        iconTheme: const IconThemeData().copyWith(
+          color: const Color.fromARGB(250, 0, 102, 140),
+        ),
       ),
       body: Stack(
         children: [
@@ -51,7 +61,8 @@ class PrivacyPolicyScreen extends StatelessWidget {
                   horizontal: 20.0,
                   vertical: 12.0,
                 ),
-                foregroundColor: Colors.black,
+                backgroundColor: Color.fromARGB(250, 0, 102, 140),
+                foregroundColor: Colors.white,
               ),
               child: const Text(Strings.btnAgreePrivacyAndPolicy),
             ),

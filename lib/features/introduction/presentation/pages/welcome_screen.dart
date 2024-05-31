@@ -8,6 +8,9 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colors = theme.colorScheme;
+
     return Scaffold(
       body: Center(
         child: Column(
@@ -16,20 +19,23 @@ class WelcomeScreen extends StatelessWidget {
             Image.asset(
               'assets/images/field_service.PNG',
               height: 150,
-              color: Colors.grey,
+              color: const Color.fromARGB(255, 0, 102, 140),
             ),
             const SizedBox(height: 60),
             Text(
               Strings.appName,
-              style: GoogleFonts.ptSans(fontSize: 38, color: Colors.black),
+              style: GoogleFonts.ptSans(
+                fontSize: 38,
+                color: const Color.fromARGB(255, 0, 102, 140),
+              ),
             ),
-            const SizedBox(height: 70),
+            const SizedBox(height: 50),
             Text(
               textAlign: TextAlign.start,
               Strings.appDescriptionPrefix,
               style: GoogleFonts.ptSans(
                 fontSize: 28,
-                color: Colors.grey,
+                color: const Color.fromARGB(255, 115, 122, 128),
               ),
             ),
             Text(
@@ -37,14 +43,14 @@ class WelcomeScreen extends StatelessWidget {
               Strings.appDescriptionSuffix,
               style: GoogleFonts.ptSans(
                 fontSize: 28,
-                color: Colors.grey,
+                color: const Color.fromARGB(255, 115, 122, 128),
               ),
             ),
             const SizedBox(height: 50),
             Text(
               Strings.appVersion,
               style: GoogleFonts.ptSans(
-                color: Colors.grey,
+                color: const Color.fromARGB(250, 0, 102, 140),
                 fontSize: 16,
               ),
             ),
@@ -61,13 +67,12 @@ class WelcomeScreen extends StatelessWidget {
                   horizontal: 80.0,
                   vertical: 10.0,
                 ),
+                backgroundColor: const Color.fromARGB(250, 0, 102, 140),
                 foregroundColor: Colors.black,
               ),
               child: Text(
                 Strings.btnTextNext,
-                style: GoogleFonts.ptSans(
-                  fontSize: 18,
-                ),
+                style: GoogleFonts.ptSans(fontSize: 18, color: Colors.white),
               ),
             ),
             const SizedBox(height: 50),

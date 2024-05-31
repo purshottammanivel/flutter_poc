@@ -86,4 +86,5 @@ class Strings {
   static const String appUrnNumber = '514604766392897';
   static const String textFieldHintEnterCustomerID = 'Enter Customer ID';
   static const String privacyPolicyPriorLogin = 'By using UnoPoint, you agree to UnoPoint Terms of Used and Privacy Policy';
+  static const String btnVerifyCustomerCode = 'Verify Customer Code';
 }
