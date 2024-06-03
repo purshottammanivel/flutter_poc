@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uno_point_flutter_poc/features/introduction/presentation/pages/background_location_access_screen.dart';
 import 'package:uno_point_flutter_poc/features/introduction/presentation/pages/customer_id_input_screen.dart';
-import 'package:uno_point_flutter_poc/features/introduction/presentation/pages/terms_and_condition_screen.dart';
+import 'package:uno_point_flutter_poc/features/introduction/presentation/pages/privacy_policy_screen.dart';
 import 'package:uno_point_flutter_poc/features/introduction/presentation/pages/welcome_screen.dart';
 
 class AppRoutes {

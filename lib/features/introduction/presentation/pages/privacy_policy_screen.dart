@@ -8,19 +8,31 @@ class PrivacyPolicyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 219, 233, 242),
+        // backgroundColor: const Color.fromARGB(255, 219, 233, 242),
+        backgroundColor: theme.brightness == Brightness.light
+            ? const Color.fromARGB(255, 219, 233, 242) // Light mode color
+            : const Color.fromARGB(255, 23, 40, 48), // Dark mode color
         scrolledUnderElevation: 0,
         title: Text(
           Strings.appName,
           style: GoogleFonts.ptSans(
-            color: const Color.fromARGB(250, 0, 102, 140),
+            // color: const Color.fromARGB(250, 0, 102, 140),
+            color: theme.brightness == Brightness.light
+                ? const Color.fromARGB(250, 0, 102, 140)
+                : Colors.white,
             fontSize: 24,
           ),
         ),
         iconTheme: const IconThemeData().copyWith(
-          color: const Color.fromARGB(250, 0, 102, 140),
+          // color: const Color.fromARGB(250, 0, 102, 140),
+          color: theme.brightness == Brightness.light
+              ? const Color.fromARGB(250, 0, 102, 140)
+              : Colors.white
+              // ? const Color.fromARGB(250, 0, 102, 140) // Light mode color
+              // : const Color.fromARGB(250, 192, 199, 205), // Dark mode color
         ),
       ),
       body: Stack(
@@ -34,7 +46,10 @@ class PrivacyPolicyScreen extends StatelessWidget {
                   Text(
                     Strings.termsAndConditions,
                     style: GoogleFonts.ptSans(
-                      color: Colors.black,
+                      // color: Colors.black,
+                      color: theme.brightness == Brightness.light
+                          ? const Color.fromARGB(255, 115, 122, 128)
+                          : const Color.fromARGB(255, 184, 193, 199),
                       fontSize: 18,
                     ),
                   ),
@@ -61,10 +76,21 @@ class PrivacyPolicyScreen extends StatelessWidget {
                   horizontal: 20.0,
                   vertical: 12.0,
                 ),
-                backgroundColor: Color.fromARGB(250, 0, 102, 140),
+                // backgroundColor: const Color.fromARGB(250, 0, 102, 140),
+                backgroundColor: theme.brightness == Brightness.light
+                    ? const Color.fromARGB(250, 0, 102, 140) // Light mode color
+                    : const Color.fromARGB(255, 118, 209, 254),
                 foregroundColor: Colors.white,
               ),
-              child: const Text(Strings.btnAgreePrivacyAndPolicy),
+              child: Text(
+                Strings.btnAgreePrivacyAndPolicy,
+                style: GoogleFonts.ptSans(
+                  fontSize: 18,
+                  color: theme.brightness == Brightness.light
+                      ? Colors.white
+                      : Colors.black,
+                ),
+              ),
             ),
           ),
         ],

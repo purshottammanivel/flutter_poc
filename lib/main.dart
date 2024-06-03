@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:uno_point_flutter_poc/config/routes/routes.dart';
 import 'package:uno_point_flutter_poc/di/injection_container.dart';
 
@@ -13,9 +14,12 @@ class UnoPoint extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       initialRoute: AppRoutes.homeScreen,
       onGenerateRoute: AppRoutes.onGenerateRoutes,
+      theme: GetIt.instance<ThemeData>(instanceName: 'lightTheme'),
+      darkTheme: GetIt.instance<ThemeData>(instanceName: 'darkTheme'),
+      themeMode: ThemeMode.system, // Use system theme mode (light/dark)
     );
   }
 }
