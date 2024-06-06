@@ -1,53 +1,49 @@
-import 'package:uno_point_flutter_poc/features/introduction/domain/entities/CustomerDetailEntity.dart';
+class CustomerDetailModel {
+  final String custId;
+  final String custName;
+  final String custUrl;
+  final String appVer;
+  final String projectCustUrl;
+  final String projectAppVer;
+  final String projectFlag;
+  final String serviceFlag;
+  final String compatibilityFlag;
+  final String serverIpNameWithoutContext;
+  final String custImageUrl;
+  final String salesCustUrl;
+  final String salesAppVer;
 
-class CustomerDetailModel extends CustomerDetailEntity {
-  const CustomerDetailModel({
-    int? id,
-    String? custId,
-    String? custName,
-    String? custUrl,
-    String? appver,
-    String? projectCustUrl,
-    String? projectAppver,
-    String? projectflag,
-    String? serviceflag,
-    String? compatibilityflag,
-    String? serveripnamewocontext,
-    String? custimageurl,
-    String? salesCustUrl,
-    String? salesAppver,
-  }) : super(
-          id: id,
-          custId: custId,
-          custName: custName,
-          custUrl: custUrl,
-          appver: appver,
-          projectCustUrl: projectCustUrl,
-          projectAppver: projectAppver,
-          projectflag: projectflag,
-          serviceflag: serviceflag,
-          compatibilityflag: compatibilityflag,
-          serveripnamewocontext: serveripnamewocontext,
-          custimageurl: custimageurl,
-          salesCustUrl: salesCustUrl,
-          salesAppver: salesAppver,
-        );
+  CustomerDetailModel({
+    required this.custId,
+    required this.custName,
+    required this.custUrl,
+    required this.appVer,
+    required this.projectCustUrl,
+    required this.projectAppVer,
+    required this.projectFlag,
+    required this.serviceFlag,
+    required this.compatibilityFlag,
+    required this.serverIpNameWithoutContext,
+    required this.custImageUrl,
+    required this.salesCustUrl,
+    required this.salesAppVer,
+  });
 
-  factory CustomerDetailModel.fromJson(Map<String, dynamic> map) {
+  factory CustomerDetailModel.fromJson(Map<String, dynamic> json) {
     return CustomerDetailModel(
-      custId: map['CustId']                               ?? "",
-      custName: map['CustName']                           ?? "",
-      custUrl: map['CustUrl']                             ?? "",
-      appver: map['Appver']                               ?? "",
-      projectCustUrl: map['ProjectCustUrl']               ?? "",
-      projectAppver: map['ProjectAppver']                 ?? "",
-      projectflag: map['Projectflag']                     ?? "",
-      serviceflag: map['Serviceflag']                     ?? "",
-      compatibilityflag: map['compatibilityflag']         ?? "",
-      serveripnamewocontext: map['serveripnamewocontext'] ?? "",
-      custimageurl: map['Custimageurl']                   ?? "",
-      salesCustUrl: map['SalesCustUrl']                   ?? "",
-      salesAppver: map['SalesAppver']                     ?? "",
+      custId: json['CustId'] ?? "",
+      custName: json['CustName'] ?? "",
+      custUrl: json['CustUrl'] ?? "",
+      appVer: json['Appver'] ?? "",
+      projectCustUrl: json['ProjectCustUrl'] ?? "",
+      projectAppVer: json['ProjectAppver'] ?? "",
+      projectFlag: json['Projectflag'] ?? "",
+      serviceFlag: json['Serviceflag'] ?? "",
+      compatibilityFlag: json['compatibilityflag'] ?? "",
+      serverIpNameWithoutContext: json['serveripnamewocontext'] ?? "",
+      custImageUrl: json['Custimageurl'] ?? "",
+      salesCustUrl: json['SalesCustUrl'] ?? "",
+      salesAppVer: json['SalesAppver'] ?? "",
     );
   }
 }

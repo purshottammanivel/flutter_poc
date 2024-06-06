@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:uno_point_flutter_poc/config/routes/routes.dart';
-import 'package:uno_point_flutter_poc/di/injection_container.dart';
+import 'package:uno_point_flutter_poc/config/theme/app_theme_provider.dart';
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await initializeDependencies();
-  runApp(const UnoPoint());
+void main() {
+  runApp(
+    const ProviderScope(
+      child: UnoPoint(),
+    ),
+  );
 }
 
 class UnoPoint extends StatelessWidget {
@@ -14,12 +16,17 @@ class UnoPoint extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      initialRoute: AppRoutes.homeScreen,
-      onGenerateRoute: AppRoutes.onGenerateRoutes,
-      theme: GetIt.instance<ThemeData>(instanceName: 'lightTheme'),
-      darkTheme: GetIt.instance<ThemeData>(instanceName: 'darkTheme'),
-      themeMode: ThemeMode.system, // Use system theme mode (light/dark)
+    return Consumer(
+      builder: (context, ref, child) {
+        final appTheme = ref.watch(unoPointThemeDataProvider);
+        return MaterialApp(
+          initialRoute: AppRoutes.homeScreen,
+          onGenerateRoute: AppRoutes.onGenerateRoutes,
+          theme: appTheme.lightTheme,
+          darkTheme: appTheme.darkTheme,
+          themeMode: ThemeMode.system,
+        );
+      },
     );
   }
 }

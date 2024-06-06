@@ -1,16 +1,30 @@
 import 'package:dio/dio.dart';
 
-abstract class DataState<T> {
+class ApiResponse<T> {
   final T? data;
-  final DioException? exception;
+  final String? error;
 
-  const DataState({this.data, this.exception});
+  ApiResponse({this.data, this.error});
 }
 
-class DataSuccess<T> extends DataState<T> {
-  const DataSuccess(T data) : super(data: data);
-}
+class NetworkWrapper {
+  final Dio dio;
 
-class DataFailed<T> extends DataState<T> {
-  const DataFailed(DioException exception) : super(exception: exception);
+  NetworkWrapper(this.dio);
+
+  Future<ApiResponse<T>> get<T>(String path, T Function(dynamic) fromJson) async {
+    try {
+      final response = await dio.get(path);
+      if (response.statusCode == 200) {
+        final parsedData = fromJson(response.data);
+        return ApiResponse(data: parsedData);
+
+        //return ApiResponse(data: fromJson(response.data));
+      } else {
+        return ApiResponse(error: 'Failed to load data');
+      }
+    } catch (e) {
+      return ApiResponse(error: e.toString());
+    }
+  }
 }

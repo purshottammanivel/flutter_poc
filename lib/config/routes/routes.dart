@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:uno_point_flutter_poc/features/introduction/presentation/pages/background_location_access_screen.dart';
-import 'package:uno_point_flutter_poc/features/introduction/presentation/pages/customer_id_input_screen.dart';
-import 'package:uno_point_flutter_poc/features/introduction/presentation/pages/privacy_policy_screen.dart';
-import 'package:uno_point_flutter_poc/features/introduction/presentation/pages/welcome_screen.dart';
+import 'package:uno_point_flutter_poc/features/introduction/presentation/screens/background_location_access_screen.dart';
+import 'package:uno_point_flutter_poc/features/introduction/presentation/screens/customer_id_input_screen.dart';
+import 'package:uno_point_flutter_poc/features/introduction/presentation/screens/privacy_policy_screen.dart';
+import 'package:uno_point_flutter_poc/features/introduction/presentation/screens/welcome_screen.dart';
 
 class AppRoutes {
   static const String homeScreen = '/WelcomeScreen';
@@ -40,7 +40,7 @@ class AppRoutes {
       case backgroundLocationAccessScreen:
         return const BackgroundLocationAccessScreen(); //BackgroundLocationAccessPage();
       case customerIdInputScreen:
-        return const CustomerIdInputScreen(); //CustomerIdInputPage();
+        return CustomerIdInputScreen(); //CustomerIdInputPage();
       case mobileNumberInputScreen:
         return const MaterialApp(); //MobileNumberInputPage();
       case otpInputScreen:
